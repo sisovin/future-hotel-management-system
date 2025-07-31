@@ -1,76 +1,204 @@
 @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
+@tailwind components;
+@tailwind utilities;
 
-  @layer base {
-    :root {
-      --background: 0 0% 100%;
-      --foreground: 222.2 84% 4.9%;
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
 
-      --card: 0 0% 100%;
-      --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
 
-      --popover: 0 0% 100%;
-      --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-      --primary: 222.2 47.4% 11.2%;
-      --primary-foreground: 210 40% 98%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
 
-      --secondary: 210 40% 96.1%;
-      --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
-      --muted: 210 40% 96.1%;
-      --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-      --accent: 210 40% 96.1%;
-      --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
-      --destructive: 0 84.2% 60.2%;
-      --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
 
-      --border: 214.3 31.8% 91.4%;
-      --input: 214.3 31.8% 91.4%;
-      --ring: 222.2 84% 4.9%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
 
-      --radius: 0.5rem;
-    }
-
-    .dark {
-      --background: 222.2 84% 4.9%;
-      --foreground: 210 40% 98%;
-
-      --card: 222.2 84% 4.9%;
-      --card-foreground: 210 40% 98%;
-
-      --popover: 222.2 84% 4.9%;
-      --popover-foreground: 210 40% 98%;
-
-      --primary: 210 40% 98%;
-      --primary-foreground: 222.2 47.4% 11.2%;
-
-      --secondary: 217.2 32.6% 17.5%;
-      --secondary-foreground: 210 40% 98%;
-
-      --muted: 217.2 32.6% 17.5%;
-      --muted-foreground: 215 20.2% 65.1%;
-
-      --accent: 217.2 32.6% 17.5%;
-      --accent-foreground: 210 40% 98%;
-
-      --destructive: 0 62.8% 30.6%;
-      --destructive-foreground: 210 40% 98%;
-
-      --border: 217.2 32.6% 17.5%;
-      --input: 217.2 32.6% 17.5%;
-      --ring: 212.7 26.8% 83.9%;
-    }
+    --radius: 0.5rem;
   }
 
-  @layer base {
-    * {
-      @apply border-border;
-    }
-    body {
-      @apply bg-background text-foreground;
-    }
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
   }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Cyberpunk Custom Styles */
+@layer components {
+  .cyber-glass {
+    @apply bg-white bg-opacity-5 backdrop-blur-md border border-white border-opacity-10;
+  }
+
+  .cyber-card {
+    @apply bg-black bg-opacity-60 backdrop-blur-md border border-neon border-opacity-30 rounded-lg;
+    background-image: url('data:image/svg+xml,%3Csvg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M10 10 H90 V90 H10 Z" fill="none" stroke="%238A2BE2" stroke-width="0.5" opacity="0.1"/%3E%3Ccircle cx="10" cy="10" r="1" fill="%238A2BE2" opacity="0.3"/%3E%3Ccircle cx="90" cy="90" r="1" fill="%2300CED1" opacity="0.3"/%3E%3C/svg%3E');
+    background-size: 50px 50px;
+  }
+
+  .cyber-button {
+    @apply bg-teal text-black font-bold px-4 py-2 rounded transition-all duration-300;
+    @apply hover:bg-flame hover:shadow-neon;
+  }
+
+  .cyber-input {
+    @apply bg-black bg-opacity-50 border border-neon border-opacity-50 text-white placeholder-gray-400;
+    @apply focus:border-teal focus:shadow-teal-sm focus:outline-none;
+  }
+
+  .cyber-sidebar {
+    @apply bg-cyber-gray-950 bg-opacity-90 backdrop-blur-md border-r border-neon border-opacity-20;
+    background-image: url('data:image/svg+xml,%3Csvg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%238A2BE2" fill-opacity="0.05"%3E%3Cpath d="M0 0h20v20H0z"/%3E%3Cpath d="M10 0v20M0 10h20" stroke="%238A2BE2" stroke-width="0.5" opacity="0.1"/%3E%3C/g%3E%3C/svg%3E');
+  }
+
+  .cyber-header {
+    @apply bg-gradient-to-r from-cyber-gray-900 via-cyber-gray-800 to-cyber-gray-900;
+    @apply border-b border-neon border-opacity-30 backdrop-blur-md;
+  }
+
+  .neon-text {
+    @apply text-neon font-extrabold tracking-wide;
+    text-shadow:
+      0 0 10px #8a2be2,
+      0 0 20px #8a2be2;
+  }
+
+  .teal-glow {
+    @apply text-teal;
+    text-shadow: 0 0 10px #00ced1;
+  }
+
+  .circuit-bg {
+    background-image: url('data:image/svg+xml,%3Csvg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M10 10 H90 V90 H10 Z" fill="none" stroke="%238A2BE2" stroke-width="0.5" opacity="0.2"/%3E%3Ccircle cx="10" cy="10" r="2" fill="%238A2BE2" opacity="0.4"/%3E%3Ccircle cx="90" cy="90" r="2" fill="%2300CED1" opacity="0.4"/%3E%3Cpath d="M10 50 H40 V90" fill="none" stroke="%2300CED1" stroke-width="0.5" opacity="0.2"/%3E%3Cpath d="M50 10 V40 H90" fill="none" stroke="%23FF4500" stroke-width="0.5" opacity="0.2"/%3E%3C/svg%3E');
+    background-size: 100px 100px;
+  }
+
+  .data-stream {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .data-stream::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00ced1, transparent);
+    animation: data-stream 3s linear infinite;
+  }
+
+  .particle-field {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #8a2be2;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .particle:nth-child(2n) {
+    background: #00ced1;
+    animation-delay: -1s;
+  }
+
+  .particle:nth-child(3n) {
+    background: #ff4500;
+    animation-delay: -2s;
+  }
+}
+
+@layer utilities {
+  .text-shadow-neon {
+    text-shadow:
+      0 0 10px #8a2be2,
+      0 0 20px #8a2be2;
+  }
+
+  .text-shadow-teal {
+    text-shadow: 0 0 10px #00ced1;
+  }
+
+  .scrollbar-cyber {
+    scrollbar-width: thin;
+    scrollbar-color: #8a2be2 #1e293b;
+  }
+
+  .scrollbar-cyber::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .scrollbar-cyber::-webkit-scrollbar-track {
+    background: #1e293b;
+  }
+
+  .scrollbar-cyber::-webkit-scrollbar-thumb {
+    background: #8a2be2;
+    border-radius: 4px;
+  }
+
+  .scrollbar-cyber::-webkit-scrollbar-thumb:hover {
+    background: #9a4bf2;
+  }
+}
